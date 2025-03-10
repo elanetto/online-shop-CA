@@ -2,16 +2,14 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Outlet } from 'react-router-dom';
 
-export function Layout () {
+export function Layout({ products }) {
     return (
-        <> 
-            <body className='m-0 p-0 h-screen w-screen flex flex-col'>
-                <Header />
-                <main className='grow sm:p-0 px-48 py-6 flex flex-col'>
-                    <Outlet />
-                </main>
-                <Footer />
-            </body>
-        </>
-    )
+        <div className="flex flex-col min-h-screen">
+            <Header products={products} />
+            <main className="flex-grow w-full max-w-screen px-4 sm:px-0 py-6">
+                <Outlet />
+            </main>
+            <Footer />
+        </div>
+    );
 }

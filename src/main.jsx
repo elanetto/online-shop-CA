@@ -1,13 +1,14 @@
-import { StrictMode } from 'react'
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Layout } from './layout/index.jsx';
-import { Login } from './pages/login.jsx'
-import { Register } from './pages/register.jsx'
 import { SpecificProduct } from "./pages/specificProduct.jsx";
 import { Checkout } from "./pages/checkout.jsx";
+import { Contact } from "./pages/contact.jsx";
+import { OrderConfirmation } from './pages/orderConfirmation.jsx';
+import { MessageSent } from './pages/messageSent.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,8 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
+        path: "contact",
+        element: <Contact />,
       },
       {
         path: "product/:id",
@@ -33,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Checkout />,
+      },
+      {
+        path: "order-confirmation",
+        element: <OrderConfirmation />,
+      },
+      {
+        path: "message-sent",
+        element: <MessageSent />,
       },
     ]
   },
