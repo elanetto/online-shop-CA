@@ -47,17 +47,17 @@ export function Cart() {
                             </div>
                             <div className="flex items-center space-x-2">
                                 <button
-                                    className="px-2 py-1 bg-gray-300 rounded"
+                                    className="px-2 py-1 bg-gray-300 rounded cursor-pointer"
                                     onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
                                 >-</button>
                                 <span>{item.quantity}</span>
                                 <button
-                                    className="px-2 py-1 bg-gray-300 rounded"
+                                    className="px-2 py-1 bg-gray-300 rounded cursor-pointer"
                                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                 >+</button>
                             </div>
                             <button
-                                className="ml-4 px-2 py-1 bg-red-500 text-white rounded flex items-center justify-center"
+                                className="ml-4 px-2 py-1 bg-red-500 text-white rounded flex items-center justify-center cursor-pointer"
                                 onClick={() => removeFromCart(item.id)}
                                 aria-label="Remove item from cart"
                             >
