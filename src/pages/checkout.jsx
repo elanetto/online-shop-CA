@@ -18,7 +18,7 @@ export function Checkout() {
             {cart.length > 0 && (
                 <button
                     onClick={handlePayment}
-                    className="mt-6 px-6 py-2 bg-blue-700 hover:bg-blue-950 text-white rounded-lg text-lg"
+                    className="mt-6 px-6 py-2 bg-blue-700 hover:bg-blue-950 text-white rounded-lg text-lg cursor-pointer"
                 >
                     Pay Now
                 </button>
