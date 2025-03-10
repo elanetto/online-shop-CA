@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCart } from '../stores/store.js';
 import { API_ENDPOINTS } from '../api.js';
@@ -8,6 +8,8 @@ const { ALLPRODUCTS } = API_ENDPOINTS;
 export function SpecificProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
   const url = ALLPRODUCTS;
 
   useEffect(() => {
@@ -24,6 +26,17 @@ export function SpecificProduct() {
   }, [url, id]);
 
   const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({ 
+      id: product.id, 
+      title: product.title, 
+      price: product.price, 
+      discountedPrice: product.discountedPrice, 
+      image: product.image,
+    });
+    setShowPopup(true);
+  };
 
   const StarRating = ({ rating }) => {
     const maxStars = 5;
@@ -60,13 +73,7 @@ export function SpecificProduct() {
             )}
             <button
                 className="rounded-lg py-2 px-4 bg-blue-600 text-white hover:bg-blue-950 w-40"
-                onClick={() => addToCart({ 
-                    id: product.id, 
-                    title: product.title, 
-                    price: product.price, 
-                    discountedPrice: product.discountedPrice, 
-                    image: product.image 
-                })}
+                onClick={handleAddToCart}
             >
                 Buy now
             </button>
@@ -90,6 +97,34 @@ export function SpecificProduct() {
           <p className="text-center">No reviews available.</p>
         )}
       </div>
+
+      {showPopup && (
+        <div className="fixed inset-0 bg-[rgba(0,0,0,0.4)] flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center gap-4 w-80">
+            <img
+              src={product.image.url}
+              alt={product.image.alt || "Product image"}
+              className="h-32 w-32 object-cover rounded"
+            />
+            <h2 className="text-xl font-bold">Congrats!</h2>
+            <p>{product.title} has been added to your cart.</p>
+            <div className="flex gap-4">
+              <button
+                className="py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-950"
+                onClick={() => setShowPopup(false)}
+              >
+                Continue Shopping
+              </button>
+              <button
+                className="py-2 px-4 bg-green-600 text-white rounded hover:bg-green-800"
+                onClick={() => navigate('/cart')}
+              >
+                Go to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+} 
