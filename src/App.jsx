@@ -1,5 +1,4 @@
 import './index.css'
-import './App.css'
 import { useState, useEffect } from "react";
 import { API_ENDPOINTS } from './api.js';
 import { Card } from './components/card';
@@ -23,7 +22,8 @@ function App() {
   }, []);
 
   return (
-    <div className="p-4 flex flex-col justify-center items-center w-screen">
+    <div className="p-4 flex flex-col justify-center items-center">
+      <h1 className='text-blue-700 text-3xl font-bold pb-4'>View all products</h1>
       <div className="w-full max-w-screen-xl mx-auto">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
