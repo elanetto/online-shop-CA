@@ -15,7 +15,7 @@ export function Search() {
             try {
                 const response = await fetch(ALLPRODUCTS);
                 const data = await response.json();
-                setProducts(data.data.slice(0, 25));
+                setProducts(data.data);
             } catch (error) {
                 console.error("Error fetching products:", error);
             }

@@ -4,7 +4,7 @@ import { CartIcon } from '../components/cartIcon';
 
 export function Header() {
     return (
-        <header className="w-screen bg-blue-600 text-white h-32 lg:h-28 flex flex-wrap justify-between items-center p-4 sm:p-8 md:px-16 lg:px-24 xl:px-48">
+        <header className="w-full bg-blue-600 text-white h-32 lg:h-28 flex flex-wrap justify-between items-center p-4 sm:p-8 md:px-16 lg:px-24 xl:px-48">
             <div className="font-black text-3xl hover:text-amber-200">
                 <Link to="/">Shop</Link>
             </div>

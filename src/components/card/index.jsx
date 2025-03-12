@@ -6,7 +6,7 @@ export const Card = ({ product }) => {
 
   return (
     <div className="rounded-lg shadow-md p-4 flex flex-col gap-2 bg-gray-50 hover:brightness-80 h-full">
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/product/${product.id}`} className="cursor-pointer">
         <img
           src={product.image.url}
           alt={product.image.alt || "Product image"}

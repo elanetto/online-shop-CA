@@ -72,7 +72,7 @@ export function SpecificProduct() {
               <p className="font-bold pb-6">${product.price.toFixed(2)}</p>
             )}
             <button
-                className="rounded-lg py-2 px-4 bg-blue-600 text-white hover:bg-blue-950 w-40"
+                className="rounded-lg py-2 px-4 bg-blue-600 text-white hover:bg-blue-950 w-40 cursor-pointer"
                 onClick={handleAddToCart}
             >
                 Buy now
