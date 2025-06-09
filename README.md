@@ -1,6 +1,6 @@
 # Online Shop in React
 
-![image](https://raw.githubusercontent.com/elanetto/online-shop-CA/refs/heads/main/public/readme-files/online-shop-ca-overview.png)
+![image](https://raw.githubusercontent.com/elanetto/Portfolio-2/refs/heads/main/src/assets/portfolio/card/new-eShop-1.jpg)
 
 This is set up as a Vite and React project, using vanilla JavaScript and Tailwind. The task was to use a given API containing 25 items ans set up a fictional online shop with these items.
 
@@ -12,7 +12,7 @@ You can visit the deployed project here: [Online Shop CA](online-shop-ca-anette.
 The contact form is set up to only accept valid information. As an earlier teacher, I have set the validations required to make sense: Why would you even send a message if you have less than 5 words to say?
 
 ## Cart function using Zustand
-![image](https://raw.githubusercontent.com/elanetto/online-shop-CA/refs/heads/main/public/readme-files/cart-function.png)
+![image](https://raw.githubusercontent.com/elanetto/Portfolio-2/refs/heads/main/src/assets/portfolio/card/new-eShop-3.jpg)
 
 The cart is set up using Zustand, and the function code is exported and then imported in both the Cart.jsx component and the Checkout.jsx page.
 
